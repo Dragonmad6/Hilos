@@ -17,12 +17,15 @@ public class Principal {
         Runnable hilo2 = new Hilos2();
         
         
-        HiloUnico hiloUnico1 = new HiloUnico("Hilo Unico 1");
-        HiloUnico hiloUnico2 = new HiloUnico("Hilo Unico 2");
+        HiloUnico hiloUnico1 = new HiloUnico();
+        HiloUnico hiloUnico2 = new HiloUnico();
         
                 
 //        hilo1.start(); //Ejecuta el metodo run(). Si heredo Thread
 //        hilo2.run(); //Ejecuta el metodo run(). Si implemento Runnable.
+
+//        hiloUnico1.CrearAuxiliar("Voy a matar a MOU", 500);
+//        hiloUnico2.CrearAuxiliar("Pa loca tu calva", 1500);
         
           hiloUnico1.start();
           hiloUnico2.start();

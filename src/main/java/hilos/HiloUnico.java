@@ -5,29 +5,43 @@
  */
 package hilos;
 
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Carlosc
  */
 public class HiloUnico extends Thread{
     
-    String frase;
+    Auxiliar aux;
 
     public HiloUnico() {
     }
 
-    public HiloUnico(String frase) {
-        this.frase = frase;
+    public HiloUnico(Auxiliar aux) {
+        this.aux = aux;
     }
-    
-    
-    
+
     @Override
     public void run(){
+        CrearAuxiliar();
         for (int i = 0; i < 100; i++) {
-            System.out.println(frase);
+            try {
+                System.out.println(aux.nombre);
+                sleep(aux.tiempoEspera); // Espera 100 milisegundos (0.1 segundos)
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HiloUnico.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
     }
     
-    
+    public void CrearAuxiliar( String frase, int tiempoEspera){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Frase a repetir: ");
+        aux.nombre = sc.nextLine();
+        aux.tiempoEspera = 500;
+    }
 }
