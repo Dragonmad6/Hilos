@@ -38,7 +38,7 @@ public class HiloUnico extends Thread{
         }
     }
     
-    public void CrearAuxiliar( String frase, int tiempoEspera){
+    public void CrearAuxiliar(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Frase a repetir: ");
         aux.nombre = sc.nextLine();
